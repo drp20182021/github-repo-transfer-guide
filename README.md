@@ -50,10 +50,11 @@ This guide helps you transfer multiple repositories from your personal GitHub ac
 
 3. **Transfer Repositories:**
 
-   Set the target organization name as an environment variable before running the transfer script to avoid modifying the script:
+   Before running the transfer script, set the target organization name as an environment variable. Optionally, you can list your existing organizations to ensure you use the correct name:
 
    ```bash
-   export ORGANIZATION_NAME="Your-New-Organization-Name"
+   gh org list
+   export ORGANIZATION_NAME="Your-Chosen-Organization-Name"
    chmod +x transfer_repos.sh
    ./transfer_repos.sh
    ```
@@ -61,7 +62,13 @@ This guide helps you transfer multiple repositories from your personal GitHub ac
 
 4. **Verify the Transfer:**
 
-   Visit `https://github.com/$ORGANIZATION_NAME` replacing `$ORGANIZATION_NAME` with your organization's name to ensure all intended repositories have been transferred.
+   After running the `transfer_repos.sh` script, confirm that all repositories have been successfully transferred to your new organization:
+
+   1. Navigate to your [organizations settings page on GitHub](https://github.com/settings/organizations) to view all your organizations.
+   2. Click on the name of your new organization to go to its GitHub page.
+   3. Check the 'Repositories' tab in your organization's GitHub page to see all the repositories currently under this organization.
+
+   Ensure all repositories you intended to transfer are listed. If any are missing, recheck the `repos.txt` file and ensure the `transfer_repos.sh` script executed without errors.
 
 
 ## Conclusion
