@@ -11,10 +11,10 @@ This guide helps you transfer multiple repositories from your personal GitHub ac
 
 1. **Clone this repository:**
 
-   \```bash
+   ```bash
    git clone https://github.com/yourusername/github-repo-transfer-guide.git
    cd github-repo-transfer-guide
-   \```
+   ```
 
 2. **Install GitHub CLI:**
 
@@ -24,9 +24,9 @@ This guide helps you transfer multiple repositories from your personal GitHub ac
 
    Ensure you are authenticated with GitHub CLI:
 
-   \```bash
+   ```bash
    gh auth login
-   \```
+   ```
 
 ## Usage
 
@@ -52,11 +52,11 @@ This guide helps you transfer multiple repositories from your personal GitHub ac
 
    Set the target organization name as an environment variable before running the transfer script to avoid modifying the script:
 
-   \```bash
+   ```bash
    export ORGANIZATION_NAME="Your-New-Organization-Name"
    chmod +x transfer_repos.sh
    ./transfer_repos.sh
-   \```
+   ```
 
 
 4. **Verify the Transfer:**
@@ -68,9 +68,9 @@ This guide helps you transfer multiple repositories from your personal GitHub ac
 
 After transferring, update the local remotes for the cloned repositories to ensure that your future interactions (`git push` or `git pull`) are directed to the new repository locations under your organization:
 
-\```bash
+```bash
 git remote set-url origin https://github.com/$ORGANIZATION_NAME/repository-name.git
-\```
+```
 
 Replace `https://github.com/$ORGANIZATION_NAME/repository-name.git` with the actual URL of your transferred repository. Review the settings and permissions within your new organization to ensure they meet your requirements.
 
